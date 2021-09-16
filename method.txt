@@ -1,0 +1,72 @@
+@annotation(some_variable)
+def _train(self, all_the_inputs, expected_outputs):
+    """
+    This is docsting and it contains TODO;
+    as well as FIX, words
+    TODO.
+    FIX
+    :param self: 
+    :param all_the_inputs: 
+    :param expected_outputs: 
+    :return: 
+    """
+    back_prop_handler = BackPropogation\
+        (self._layers, 0.1, BackPropogation())
+    PARAM = 12
+    # this is comment with TODO and FIX
+    '''
+    some kind of string
+    '''
+    print("Education Started! Parameters: Speed", back_prop_handler.EDUCATION_SPEED,
+          "  Normal Error {}".format(self.vals[1].back_prop_handler.NORMAL_ERROR),
+          f"  Momentum{self.BackPropogation(self._layers, 1, 32)}", back_prop_handler.MOMENTUM)
+
+    doWhileHelper = 1
+
+    while (doWhileHelper == 1 or self._error > back_prop_handler.NORMAL_ERROR):
+        doWhileHelper = 0
+
+        self._error = 0
+        back_prop_handler._epoch += 1
+        for i in range(len(all_the_inputs)):
+            self._complete_count(all_the_inputs[i])  # считаю что дает мне обработка входных данных
+            back_prop_handler.training(self._output, expected_outputs[i])
+            self._error += back_prop_handler._error
+            print("Epoch ", back_prop_handler._epoch, "  Training Error: ", back_prop_handler._error, "  Output: ",
+                  self._output, "Expected: ", expected_outputs[i])
+
+            back_prop_handler._error = 0
+        print("Total Epoch's error is ", self._error)
+
+    print("Training has finished with error = ", self._error)
+
+    return back_prop_handler
+
+# annotation 1
+# some_variable 1
+# all_the_inputs 3
+# expected_outputs 3
+# back_prop_handler 12
+# _layers 2
+# PARAM 1
+# EDUCATION_SPEED 1
+# vals 1
+# NORMAL_ERROR 2
+# MOMENTUM 1
+# doWhileHelper 3
+# _error 8
+# _epoch 2
+# _output 2
+# i 4
+
+# _train 1
+# _complete_count 1
+# range 1
+# len 1
+# training 1
+# BackPropogation 3
+# print 4
+# format 1
+
+#TODOs 3
+#FIXs 3
