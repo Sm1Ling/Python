@@ -1,0 +1,1 @@
+Repo for solutions of different tasks offered by different companies. Proper task could be seen in appropriate branches
