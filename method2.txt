@@ -1,0 +1,6 @@
+def __init__(self, neurons_count, weights_count, layertype = 1): #layer type = 0 for initial, 1 for hiden , 2 for out
+    self._layer_type = layertype
+    self._out_info_data = [0 for i in range(neurons_count)]
+    self._neurons_arr = [0 for i in range(neurons_count)]
+    for i in range(neurons_count):
+        self._neurons_arr[i] = Neuron(weights_count) #прикол в bias TODO не учитывается

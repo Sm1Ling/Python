@@ -5,12 +5,12 @@ import tokenize
 
 class TokenizeParser(object):
     """
-        Accumulates number of variables and functions usage in given method-string
-        Accumulates number of given special words in comments
-        
-        Variable and function instantiation, definitions are also usages
+        Variable and function instantiation, definitions is also usages
         Function doesn't check correctness of given method
         Kind of baseline
+
+        Accumulates number of variables and functions usage in given method-string
+        Accumulates number of given special words in comments
     """
 
     key_words = frozenset(['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class',
@@ -47,13 +47,10 @@ class TokenizeParser(object):
 
     def tokenize(self, function_text, clear_fields=True, show_parsed=False):
         """
-        Call of this method would fill the proper dictionaries of this class with
-        variables, mehod and special elements (name:count) 
+        Each call of this method will rewrite data about previous tokenization
         Cannot find difference between self.field.variable, self.variable, variable
-        self.field.variable will be unparsed as field:1, variable:1 as soon as indeed we call both of them
-        
-        :param function_text: string with method code
         :param clear_fields: rewrite tokens or append them
+        :param function_text: string with method code
         :param show_parsed: show the tokenization of each element
         """
         if clear_fields:
@@ -61,7 +58,7 @@ class TokenizeParser(object):
         current = ""
         function_text += "\n"  # из-за особенности обработки токенов
 
-        for tpl in tokenize.tokenize(io.BytesIO(function_text.encode('utf-8')).readline):
+        for tpl in tokenize.tokenize(io.BytesIO(function_text.encode()).readline):
             if show_parsed:
                 print('Type ', tpl.type)
                 print('String ', tpl.string)

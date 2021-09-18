@@ -1,5 +1,5 @@
 @annotation(some_variable)
-def _train(self, all_the_inputs, expected_outputs):
+def _train(self, all_the_inputs, expected_outputs = default, oao = Defmethod()):
     """
     This is docsting and it contains TODO;
     as well as FIX, words
@@ -18,17 +18,36 @@ def _train(self, all_the_inputs, expected_outputs):
     some kind of string
     '''
     print("Education Started! Parameters: Speed", back_prop_handler.EDUCATION_SPEED,
-          "  Normal Error {}".format(self.vals[1].back_prop_handler.NORMAL_ERROR),
-          f"  Momentum{self.BackPropogation(self._layers, 1, 32)}", back_prop_handler.MOMENTUM)
+          "  Normal Error {}".format(self.AlsoMethod(some_param, some_param2).vals[1:54,1].back_prop_handler.NORMAL_ERROR),
+          f"  Momentum{self.BackPropogation(self._layers, 1, 32)}", back_prop_handler.MOMENTUM())
 
     doWhileHelper = 1
 
+    def basic_method():
+        parser = TokenizeParser(['TODO', 'FIX'])
+        with open('method.txt', 'r') as text:
+            parser.tokenize(text.read())
+
+        def __parse_f_string__(self, fstring):
+            open_idx = -1
+            open_brackets = 0
+            for letter, i in zip(fstring, range(len(fstring))):
+                if letter == "{":
+                    if open_brackets == 0:
+                        open_idx = i
+                    open_brackets += 1
+                if letter == "}":
+                    open_brackets -= 1
+                    if open_brackets == 0:
+                        self.tokenize(fstring[open_idx:i + 1], clear_fields=False)
+        print(parser)
+    
     while (doWhileHelper == 1 or self._error > back_prop_handler.NORMAL_ERROR):
         doWhileHelper = 0
 
         self._error = 0
         back_prop_handler._epoch += 1
-        for i in range(len(all_the_inputs)):
+        for i,j in range(len(all_the_inputs)):
             self._complete_count(all_the_inputs[i])  # считаю что дает мне обработка входных данных
             back_prop_handler.training(self._output, expected_outputs[i])
             self._error += back_prop_handler._error
@@ -52,13 +71,18 @@ def _train(self, all_the_inputs, expected_outputs):
 # EDUCATION_SPEED 1
 # vals 1
 # NORMAL_ERROR 2
-# MOMENTUM 1
 # doWhileHelper 3
 # _error 8
 # _epoch 2
 # _output 2
 # i 4
+# oao 1
+# j 1
+# default 1
+# some_param 1
+# some_param2 1
 
+# MOMENTUM 1
 # _train 1
 # _complete_count 1
 # range 1
@@ -67,6 +91,7 @@ def _train(self, all_the_inputs, expected_outputs):
 # BackPropogation 3
 # print 4
 # format 1
+# AlsoMethod 1
 
 #TODOs 3
 #FIXs 3
